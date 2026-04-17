@@ -87,19 +87,6 @@ ansible-playbook playbooks/node-exporter.yml
 * SSH access configured
 * Kubernetes cluster (EKS or kubeadm)
 
----
-
-## 🧠 Use Case
-
-Ideal for:
-
-* DevOps automation learning
-* Kubernetes cluster setup practice
-* GitOps + CI/CD foundation
-* Infrastructure as Code practice
-
----
-
 👨‍💻 Author
 
 Anuja Ayare
