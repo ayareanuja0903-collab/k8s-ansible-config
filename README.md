@@ -23,8 +23,31 @@ It provisions and configures:
   <img src="images/Architecture.png" width="800"/>
 </p>
 
+------
+
+## ⚙️ Ansible Workflow
+
+<p align="center">
+  <img src="images/Architecture.png" width="800"/>
+</p>
+
 ---
 
+## ☸️ Kubernetes Cluster Overview
+
+<p align="center">
+  <img src="images/Architecture.png" width="800"/>
+</p>
+---
+
+## 📂 Project Structure
+
+```bash
+inventory.ini        # EC2 / worker node inventory
+ansible.cfg          # Ansible configuration
+playbooks/           # Main automation playbooks
+roles/               # Reusable roles (Docker, K8s, Monitoring)
+images/              # Architecture diagrams
 ## ⚙️ Features
 
 - 🔧 Automated Kubernetes worker node setup
@@ -35,29 +58,4 @@ It provisions and configures:
 - 📡 Ready for Prometheus scraping
 - 🚀 GitOps-ready infrastructure integration
 
----
-
-## 📦 Repository Structure
-
-k8s-ansible-config/
-│
-├── inventory.ini
-├── ansible.cfg
-├── README.md
-│
-├── playbooks/
-│   ├── setup-docker.yml
-│   ├── k8s-prereq.yml
-│   └── node-exporter.yml
-│
-├── roles/
-│   ├── docker/
-│   ├── kubernetes/
-│   └── monitoring/
-│
-└── images/
-    ├── architecture.png
-    ├── ansible-flow.png
-    └── kubernetes-cluster.png
-    
 ---
