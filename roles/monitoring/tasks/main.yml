@@ -1,0 +1,4 @@
+- name: Install Node Exporter package dependencies
+  apt:
+    name: wget
+    state: present

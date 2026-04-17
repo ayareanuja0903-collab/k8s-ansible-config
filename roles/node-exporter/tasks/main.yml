@@ -1,3 +1,0 @@
-- name: Install Node Exporter
-  debug:
-    msg: Installing node exporter
