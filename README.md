@@ -28,7 +28,7 @@ It provisions and configures:
 ## ⚙️ Ansible Workflow
 
 <p align="center">
-  <img src="images/Architecture.png" width="800"/>
+  <img src="images/Ansible%20execution%20flowchart%20diagram.png" width="800"/>
 </p>
 
 ---
