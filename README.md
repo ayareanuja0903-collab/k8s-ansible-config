@@ -64,7 +64,7 @@ images/              # Architecture diagrams
 
 ---
 
-##📦 Playbooks
+📦 Playbooks
 
 ▶ Setup Docker
 ```bash
@@ -82,10 +82,10 @@ ansible-playbook playbooks/node-exporter.yml
 
 ## 🔧 Requirements
 
-Ansible 2.10+
-AWS EC2 instances (Ubuntu recommended)
-SSH access configured
-Kubernetes cluster (EKS or kubeadm)
+* Ansible 2.10+
+* AWS EC2 instances (Ubuntu recommended)
+* SSH access configured
+* Kubernetes cluster (EKS or kubeadm)
 
 ---
 
@@ -97,6 +97,13 @@ Ideal for:
 * Kubernetes cluster setup practice
 * GitOps + CI/CD foundation
 * Infrastructure as Code practice
+
+---
+
+👨‍💻 Author
+
+Anuja Ayare
+DevOps Engineer | Kubernetes | AWS | Terraform | Ansible
 
 ---
 
