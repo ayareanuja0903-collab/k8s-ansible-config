@@ -80,17 +80,25 @@ ansible-playbook playbooks/k8s-prereq.yml
 ansible-playbook playbooks/node-exporter.yml
 ```
 
-## 🔧 Requirements
+🔧 Requirements
 
 * Ansible 2.10+
 * AWS EC2 instances (Ubuntu recommended)
 * SSH access configured
 * Kubernetes cluster (EKS or kubeadm)
 
-👨‍💻 Author
+⚠️ Challenges & Solutions
 
-Anuja Ayare
-DevOps Engineer | Kubernetes | AWS | Terraform | Ansible
+* SSH connection issues → Fixed inventory & key permissions
+* Swap enabled → Disabled via Ansible task
+* Worker join failure → Automated join command
+* Version mismatch → Standardized using variables
+
+✅ Outcome
+
+* Automated Kubernetes cluster setup
+* Reduced manual effort and errors
+* Scalable and reusable configuration
 
 ---
 
