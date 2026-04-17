@@ -39,7 +39,7 @@ It provisions and configures:
   <img src="images/Kubernetes%20cluster%20architecture.png" width="800"/>
 </p>
 
----
+----
 
 ## 📦 Repository Structure
 
