@@ -63,3 +63,40 @@ images/              # Architecture diagrams
 - 🚀 GitOps-ready infrastructure integration
 
 ---
+
+##📦 Playbooks
+
+▶ Setup Docker
+```bash
+ansible-playbook playbooks/setup-docker.yml
+```
+
+▶ Kubernetes Prerequisites
+```bash
+ansible-playbook playbooks/k8s-prereq.yml
+```
+▶ Node Monitoring
+```bash
+ansible-playbook playbooks/node-exporter.yml
+```
+
+## 🔧 Requirements
+
+Ansible 2.10+
+AWS EC2 instances (Ubuntu recommended)
+SSH access configured
+Kubernetes cluster (EKS or kubeadm)
+
+---
+
+## 🧠 Use Case
+
+Ideal for:
+
+* DevOps automation learning
+* Kubernetes cluster setup practice
+* GitOps + CI/CD foundation
+* Infrastructure as Code practice
+
+---
+
