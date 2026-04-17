@@ -38,9 +38,10 @@ It provisions and configures:
 <p align="center">
   <img src="images/Kubernetes%20cluster%20architecture.png" width="800"/>
 </p>
+
 ---
 
-## 📂 Project Structure
+## 📦 Repository Structure
 
 ```bash
 inventory.ini        # EC2 / worker node inventory
@@ -48,6 +49,9 @@ ansible.cfg          # Ansible configuration
 playbooks/           # Main automation playbooks
 roles/               # Reusable roles (Docker, K8s, Monitoring)
 images/              # Architecture diagrams
+
+```
+
 ## ⚙️ Features
 
 - 🔧 Automated Kubernetes worker node setup
