@@ -1,13 +1,20 @@
-# 🚀 Kubernetes Ansible Configuration (k8s-ansible-config)
+# 🚀 Kubernetes + Ansible Automation Project
 
-## 📌 Overview
-This project provides **Ansible automation for configuring Kubernetes worker nodes** as part of a cloud-native DevOps/GitOps platform. It prepares EC2 instances (or any Linux nodes) with all required dependencies for joining a Kubernetes cluster and supports monitoring integration.
+![Kubernetes](https://img.shields.io/badge/Kubernetes-1.29-blue?logo=kubernetes)
+![Ansible](https://img.shields.io/badge/Ansible-Automation-red?logo=ansible)
+![Docker](https://img.shields.io/badge/Docker-Container-blue?logo=docker)
+![AWS](https://img.shields.io/badge/AWS-EKS-orange?logo=amazon-aws)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-It is designed to work alongside:
-- AWS EKS / kubeadm Kubernetes clusters
-- Terraform infrastructure provisioning
-- ArgoCD GitOps deployment pipelines
-- Prometheus & Grafana monitoring stack
+## 📌 Project Overview
+
+This project automates the setup of a **Kubernetes cluster on AWS EKS worker nodes using Ansible**.
+
+It provisions and configures:
+- 🐳 Docker / containerd runtime
+- ☸️ Kubernetes prerequisites
+- 📊 Node Exporter for monitoring
+- 🔁 Reusable Ansible roles for scalability
 
 ---
 
@@ -30,27 +37,27 @@ It is designed to work alongside:
 
 ---
 
-## 📂 Project Structure
+## 📦 Repository Structure
 
 k8s-ansible-config/
 │
-├── 📄 inventory.ini              # Target worker nodes
-├── 📄 ansible.cfg                # Ansible configuration file
+├── inventory.ini
+├── ansible.cfg
+├── README.md
 │
-├── 📁 playbooks/                 # Ansible playbooks
-│   ├── setup-docker.yml         # Docker / containerd installation
-│   ├── k8s-prereq.yml           # Kubernetes prerequisites setup
-│   ├── node-exporter.yml        # Monitoring agent setup
+├── playbooks/
+│   ├── setup-docker.yml
+│   ├── k8s-prereq.yml
+│   └── node-exporter.yml
 │
-├── 📁 roles/                    # Reusable Ansible roles
-│   ├── docker/                  # Docker role
-│   ├── kubernetes/              # Kubernetes role
-│   ├── monitoring/              # Monitoring role
+├── roles/
+│   ├── docker/
+│   ├── kubernetes/
+│   └── monitoring/
 │
-├── 📁 images/                   # Architecture diagrams & screenshots
-│   ├── architecture.png         # High-level system architecture
-│   ├── ansible-flow.png         # Ansible execution flow
-│   ├── kubernetes-cluster.png   # Cluster overview diagram
-│
-└── 📄 README.md                  # Project documentation
+└── images/
+    ├── architecture.png
+    ├── ansible-flow.png
+    └── kubernetes-cluster.png
+    
 ---
