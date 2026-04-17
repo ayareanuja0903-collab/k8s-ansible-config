@@ -36,7 +36,7 @@ It provisions and configures:
 ## ☸️ Kubernetes Cluster Overview
 
 <p align="center">
-  <img src="images/Architecture.png" width="800"/>
+  <img src="images/Kubernetes%20cluster%20architecture.png" width="800"/>
 </p>
 ---
 
