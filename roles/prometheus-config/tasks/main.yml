@@ -1,0 +1,14 @@
+- name: Create Prometheus Config Directory
+  file:
+    path: /etc/prometheus
+    state: directory
+
+- name: Deploy Prometheus Config
+  template:
+    src: prometheus.yml.j2
+    dest: /etc/prometheus/prometheus.yml
+
+- name: Restart Prometheus
+  service:
+    name: prometheus
+    state: restarted

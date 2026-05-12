@@ -1,0 +1,14 @@
+- name: Create AlertManager Config Directory
+  file:
+    path: /etc/alertmanager
+    state: directory
+
+- name: Deploy AlertManager Config
+  template:
+    src: alertmanager.yml.j2
+    dest: /etc/alertmanager/alertmanager.yml
+
+- name: Restart AlertManager
+  service:
+    name: alertmanager
+    state: restarted

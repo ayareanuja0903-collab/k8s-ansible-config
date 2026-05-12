@@ -2,7 +2,4 @@
   become: yes
 
   roles:
-    - node-setup
-    - node-exporter
-    - prometheus-config
     - alertmanager-config
