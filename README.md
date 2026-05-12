@@ -1,13 +1,20 @@
-# 🚀 Kubernetes Ansible Configuration (k8s-ansible-config)
+# 🚀 Kubernetes + Ansible Automation Project
 
-## 📌 Overview
-This project provides **Ansible automation for configuring Kubernetes worker nodes** as part of a cloud-native DevOps/GitOps platform. It prepares EC2 instances (or any Linux nodes) with all required dependencies for joining a Kubernetes cluster and supports monitoring integration.
+![Kubernetes](https://img.shields.io/badge/Kubernetes-1.29-blue?logo=kubernetes)
+![Ansible](https://img.shields.io/badge/Ansible-Automation-red?logo=ansible)
+![Docker](https://img.shields.io/badge/Docker-Container-blue?logo=docker)
+![AWS](https://img.shields.io/badge/AWS-EKS-orange?logo=amazon-aws)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-It is designed to work alongside:
-- AWS EKS / kubeadm Kubernetes clusters
-- Terraform infrastructure provisioning
-- ArgoCD GitOps deployment pipelines
-- Prometheus & Grafana monitoring stack
+## 📌 Project Overview
+
+This project automates the setup of a **Kubernetes cluster on AWS EKS worker nodes using Ansible**.
+
+It provisions and configures:
+- 🐳 Docker / containerd runtime
+- ☸️ Kubernetes prerequisites
+- 📊 Node Exporter for monitoring
+- 🔁 Reusable Ansible roles for scalability
 
 ---
 
@@ -16,7 +23,34 @@ It is designed to work alongside:
   <img src="images/Architecture.png" width="800"/>
 </p>
 
+------
+
+## ⚙️ Ansible Workflow
+
+<p align="center">
+  <img src="images/Ansible%20execution%20flowchart%20diagram.png" width="800"/>
+</p>
+
 ---
+
+## ☸️ Kubernetes Cluster Overview
+
+<p align="center">
+  <img src="images/Kubernetes%20cluster%20architecture.png" width="800"/>
+</p>
+
+----
+
+## 📦 Repository Structure
+
+```bash
+inventory.ini        # EC2 / worker node inventory
+ansible.cfg          # Ansible configuration
+playbooks/           # Main automation playbooks
+roles/               # Reusable roles (Docker, K8s, Monitoring)
+images/              # Architecture diagrams
+
+```
 
 ## ⚙️ Features
 
@@ -30,27 +64,41 @@ It is designed to work alongside:
 
 ---
 
-## 📂 Project Structure
+📦 Playbooks
 
-k8s-ansible-config/
-│
-├── 📄 inventory.ini              # Target worker nodes
-├── 📄 ansible.cfg                # Ansible configuration file
-│
-├── 📁 playbooks/                 # Ansible playbooks
-│   ├── setup-docker.yml         # Docker / containerd installation
-│   ├── k8s-prereq.yml           # Kubernetes prerequisites setup
-│   ├── node-exporter.yml        # Monitoring agent setup
-│
-├── 📁 roles/                    # Reusable Ansible roles
-│   ├── docker/                  # Docker role
-│   ├── kubernetes/              # Kubernetes role
-│   ├── monitoring/              # Monitoring role
-│
-├── 📁 images/                   # Architecture diagrams & screenshots
-│   ├── architecture.png         # High-level system architecture
-│   ├── ansible-flow.png         # Ansible execution flow
-│   ├── kubernetes-cluster.png   # Cluster overview diagram
-│
-└── 📄 README.md                  # Project documentation
+▶ Setup Docker
+```bash
+ansible-playbook playbooks/setup-docker.yml
+```
+
+▶ Kubernetes Prerequisites
+```bash
+ansible-playbook playbooks/k8s-prereq.yml
+```
+▶ Node Monitoring
+```bash
+ansible-playbook playbooks/node-exporter.yml
+```
+
+🔧 Requirements
+
+* Ansible 2.10+
+* AWS EC2 instances (Ubuntu recommended)
+* SSH access configured
+* Kubernetes cluster (EKS or kubeadm)
+
+⚠️ Challenges & Solutions
+
+* SSH connection issues → Fixed inventory & key permissions
+* Swap enabled → Disabled via Ansible task
+* Worker join failure → Automated join command
+* Version mismatch → Standardized using variables
+
+✅ Outcome
+
+* Automated Kubernetes cluster setup
+* Reduced manual effort and errors
+* Scalable and reusable configuration
+
 ---
+
